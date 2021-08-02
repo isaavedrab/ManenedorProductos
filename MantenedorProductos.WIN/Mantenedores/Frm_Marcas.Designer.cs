@@ -36,6 +36,10 @@ namespace MantenedorProductos.WIN.Mantenedores
             this.lblMarcasNombre = new System.Windows.Forms.Label();
             this.dgvMarcas = new System.Windows.Forms.DataGridView();
             this.pnlMarcas = new System.Windows.Forms.Panel();
+            this.dgvMarcasIdMarca = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvMarcasNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvMarcasEditar = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dgvMarcasEliminar = new System.Windows.Forms.DataGridViewImageColumn();
             this.tblSubMarcas.SuspendLayout();
             this.gpxMarcas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMarcas)).BeginInit();
@@ -71,7 +75,7 @@ namespace MantenedorProductos.WIN.Mantenedores
             this.gpxMarcas.Size = new System.Drawing.Size(554, 54);
             this.gpxMarcas.TabIndex = 0;
             this.gpxMarcas.TabStop = false;
-            this.gpxMarcas.Text = "Agregar Sub Categoría";
+            this.gpxMarcas.Text = "Agregar Marca";
             // 
             // btnMarcasAgregar
             // 
@@ -81,6 +85,7 @@ namespace MantenedorProductos.WIN.Mantenedores
             this.btnMarcasAgregar.TabIndex = 2;
             this.btnMarcasAgregar.Text = "Agregar";
             this.btnMarcasAgregar.UseVisualStyleBackColor = true;
+            this.btnMarcasAgregar.Click += new System.EventHandler(this.btnMarcasAgregar_Click);
             // 
             // txtMarcasNombre
             // 
@@ -101,12 +106,18 @@ namespace MantenedorProductos.WIN.Mantenedores
             // dgvMarcas
             // 
             this.dgvMarcas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvMarcas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvMarcasIdMarca,
+            this.dgvMarcasNombre,
+            this.dgvMarcasEditar,
+            this.dgvMarcasEliminar});
             this.dgvMarcas.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvMarcas.Location = new System.Drawing.Point(3, 63);
             this.dgvMarcas.Name = "dgvMarcas";
             this.dgvMarcas.RowTemplate.Height = 25;
             this.dgvMarcas.Size = new System.Drawing.Size(554, 411);
             this.dgvMarcas.TabIndex = 1;
+            this.dgvMarcas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMarcas_CellClick);
             // 
             // pnlMarcas
             // 
@@ -117,6 +128,36 @@ namespace MantenedorProductos.WIN.Mantenedores
             this.pnlMarcas.Size = new System.Drawing.Size(584, 501);
             this.pnlMarcas.TabIndex = 2;
             // 
+            // dgvMarcasIdMarca
+            // 
+            this.dgvMarcasIdMarca.DataPropertyName = "Id";
+            this.dgvMarcasIdMarca.HeaderText = "IdMarca";
+            this.dgvMarcasIdMarca.Name = "dgvMarcasIdMarca";
+            this.dgvMarcasIdMarca.Visible = false;
+            // 
+            // dgvMarcasNombre
+            // 
+            this.dgvMarcasNombre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dgvMarcasNombre.DataPropertyName = "Nombre";
+            this.dgvMarcasNombre.HeaderText = "Marca";
+            this.dgvMarcasNombre.Name = "dgvMarcasNombre";
+            // 
+            // dgvMarcasEditar
+            // 
+            this.dgvMarcasEditar.HeaderText = "Editar";
+            this.dgvMarcasEditar.MinimumWidth = 64;
+            this.dgvMarcasEditar.Name = "dgvMarcasEditar";
+            this.dgvMarcasEditar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvMarcasEditar.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // dgvMarcasEliminar
+            // 
+            this.dgvMarcasEliminar.HeaderText = "Eliminar";
+            this.dgvMarcasEliminar.MinimumWidth = 64;
+            this.dgvMarcasEliminar.Name = "dgvMarcasEliminar";
+            this.dgvMarcasEliminar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvMarcasEliminar.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
             // Frm_Marcas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -126,6 +167,7 @@ namespace MantenedorProductos.WIN.Mantenedores
             this.MaximizeBox = false;
             this.Name = "Frm_Marcas";
             this.Text = "Mantendor de Marcas";
+            this.Load += new System.EventHandler(this.Frm_Marcas_Load);
             this.tblSubMarcas.ResumeLayout(false);
             this.gpxMarcas.ResumeLayout(false);
             this.gpxMarcas.PerformLayout();
@@ -144,5 +186,9 @@ namespace MantenedorProductos.WIN.Mantenedores
         private System.Windows.Forms.Label lblMarcasNombre;
         private System.Windows.Forms.DataGridView dgvMarcas;
         private System.Windows.Forms.Panel pnlMarcas;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvMarcasIdMarca;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvMarcasNombre;
+        private System.Windows.Forms.DataGridViewImageColumn dgvMarcasEditar;
+        private System.Windows.Forms.DataGridViewImageColumn dgvMarcasEliminar;
     }
 }
