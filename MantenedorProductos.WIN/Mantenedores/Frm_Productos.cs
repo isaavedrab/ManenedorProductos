@@ -38,10 +38,21 @@ namespace MantenedorProductos.WIN.Mantenedores
             var body = JsonConvert.SerializeObject(producto);
             request.AddParameter("application/json", body, ParameterType.RequestBody);
             IRestResponse response = _client.Execute(request);
-            if (response.StatusCode.Equals(System.Net.HttpStatusCode.OK)){
+            if (response.StatusCode.Equals(System.Net.HttpStatusCode.OK))
+            {
                 Limpiar();
                 Buscar();
+                
+                MessageBox.Show("El Producto se ha agregado correctamente.",
+                                          "Mantenedor de Productos",
+                                          MessageBoxButtons.OK);
             }
+            else {
+                MessageBox.Show(response.Content,
+                                      "Mantenedor de Productos",
+                                      MessageBoxButtons.OK);
+            }
+
         }                
         public void Eliminar(Guid? idProducto) 
         {
@@ -52,8 +63,10 @@ namespace MantenedorProductos.WIN.Mantenedores
                 {
                     Buscar();
                 }
-                else { 
-                    
+                else {
+                    MessageBox.Show(response.Content,
+                                      "Mantenedor de Productos",
+                                      MessageBoxButtons.OK);
                 }
             }
         }
@@ -90,12 +103,32 @@ namespace MantenedorProductos.WIN.Mantenedores
         public string Nombre { get => txtProductosNombre.Text; set { txtProductosNombre.Text = value; } }
         public string CodBarra { get => txtProductosCodBar.Text; set { txtProductosCodBar.Text = value; } }
         public int Precio { get => int.Parse(nupProductos.Text); set => nupProductos.Text = value.ToString();}
-        public Guid? IdMarca { 
-            get => Guid.Parse(cmbProductosMarca.SelectedValue.ToString());
+        public Guid? IdMarca {
+            get
+            {
+                if (cmbProductosMarca.SelectedValue != null)
+                {
+                    return Guid.Parse(cmbProductosMarca.SelectedValue.ToString());
+                }
+                else
+                {
+                    return null;
+                }
+            }          
             set => cmbProductosMarca.SelectedIndex = 0;
         }
         public Guid? IdCategoria {
-            get => Guid.Parse(cmbProductosCategoria.SelectedValue.ToString());
+            get
+            {
+                if (cmbProductosCategoria.SelectedValue != null)
+                {
+                    return Guid.Parse(cmbProductosCategoria.SelectedValue.ToString());
+                }
+                else
+                {
+                    return null;
+                }
+            }            
             set => cmbProductosCategoria.SelectedIndex = 0;
         }
         public List<MarcaVM> Marcas 

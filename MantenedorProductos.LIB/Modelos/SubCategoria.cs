@@ -7,7 +7,7 @@ namespace MantenedorProductos.LIB.Modelos
 {
     public class SubCategoria
     {
-        public Guid Id { get; set; }
+        public Guid? Id { get; set; }
 
         [Required]
         [StringLength(60, MinimumLength = 3)]

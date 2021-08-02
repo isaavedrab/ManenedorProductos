@@ -27,7 +27,8 @@ namespace MantenedorProductos.LIB.Servicios
             else {             
                 _DataBase.Categorias.Add(new Categoria() { 
                     Id = guid, 
-                    Nombre = categoria.Nombre
+                    Nombre = categoria.Nombre,
+                    IdSubCategoria = categoria.IdSubCategoria
                 });                
             }
             return guid;

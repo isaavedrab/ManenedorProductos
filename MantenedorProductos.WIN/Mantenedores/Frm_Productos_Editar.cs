@@ -103,15 +103,27 @@ namespace MantenedorProductos.WIN.Mantenedores
                     IdCategoria = cmbProductosEditarCategoria.SelectedValue
                 });                                
             request.AddParameter("application/json", body, ParameterType.RequestBody);
-            IRestResponse response = _client.Execute(request);            
+            IRestResponse response = _client.Execute(request);
 
-            this.DialogResult = DialogResult.OK;
-            this.Close();
+            if (response.StatusCode.Equals(System.Net.HttpStatusCode.OK))
+            {
+                MessageBox.Show("El Producto se ha actualizado correctamente.",
+                                              "Mantenedor de Productos",
+                                              MessageBoxButtons.OK);
+
+                this.DialogResult = DialogResult.OK;
+                this.Close();
+            }
+            else {
+                MessageBox.Show(response.Content,
+                                              "Mantenedor de Productos",
+                                              MessageBoxButtons.OK);
+            }
         }
         private void BtnProductosEditarCancelarClick(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.Cancel;
             this.Close();
-        }       
+        }
     }
 }

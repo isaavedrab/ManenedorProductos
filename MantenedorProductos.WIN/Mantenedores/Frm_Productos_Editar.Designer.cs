@@ -66,13 +66,13 @@ namespace MantenedorProductos.WIN.Mantenedores
             this.pnlProductosEditar.Controls.Add(this.lblProductosEditarNombre);
             this.pnlProductosEditar.Location = new System.Drawing.Point(12, 12);
             this.pnlProductosEditar.Name = "pnlProductosEditar";
-            this.pnlProductosEditar.Size = new System.Drawing.Size(310, 237);
+            this.pnlProductosEditar.Size = new System.Drawing.Size(410, 237);
             this.pnlProductosEditar.TabIndex = 0;
             // 
             // nupProductosEditarPrecio
             // 
             this.nupProductosEditarPrecio.InterceptArrowKeys = false;
-            this.nupProductosEditarPrecio.Location = new System.Drawing.Point(93, 84);
+            this.nupProductosEditarPrecio.Location = new System.Drawing.Point(98, 84);
             this.nupProductosEditarPrecio.Maximum = new decimal(new int[] {
             999999999,
             0,
@@ -85,7 +85,7 @@ namespace MantenedorProductos.WIN.Mantenedores
             // 
             // btnProductosEditarActualizar
             // 
-            this.btnProductosEditarActualizar.Location = new System.Drawing.Point(199, 203);
+            this.btnProductosEditarActualizar.Location = new System.Drawing.Point(298, 203);
             this.btnProductosEditarActualizar.Name = "btnProductosEditarActualizar";
             this.btnProductosEditarActualizar.Size = new System.Drawing.Size(100, 23);
             this.btnProductosEditarActualizar.TabIndex = 11;
@@ -95,7 +95,7 @@ namespace MantenedorProductos.WIN.Mantenedores
             // 
             // btnProductosEditarCancelar
             // 
-            this.btnProductosEditarCancelar.Location = new System.Drawing.Point(93, 203);
+            this.btnProductosEditarCancelar.Location = new System.Drawing.Point(192, 203);
             this.btnProductosEditarCancelar.Name = "btnProductosEditarCancelar";
             this.btnProductosEditarCancelar.Size = new System.Drawing.Size(100, 23);
             this.btnProductosEditarCancelar.TabIndex = 10;
@@ -124,7 +124,7 @@ namespace MantenedorProductos.WIN.Mantenedores
             // cmbProductosEditarCategoria
             // 
             this.cmbProductosEditarCategoria.FormattingEnabled = true;
-            this.cmbProductosEditarCategoria.Location = new System.Drawing.Point(93, 141);
+            this.cmbProductosEditarCategoria.Location = new System.Drawing.Point(98, 141);
             this.cmbProductosEditarCategoria.Name = "cmbProductosEditarCategoria";
             this.cmbProductosEditarCategoria.Size = new System.Drawing.Size(200, 23);
             this.cmbProductosEditarCategoria.TabIndex = 6;
@@ -132,7 +132,7 @@ namespace MantenedorProductos.WIN.Mantenedores
             // cmbProductosEditarMarca
             // 
             this.cmbProductosEditarMarca.FormattingEnabled = true;
-            this.cmbProductosEditarMarca.Location = new System.Drawing.Point(93, 112);
+            this.cmbProductosEditarMarca.Location = new System.Drawing.Point(98, 112);
             this.cmbProductosEditarMarca.Name = "cmbProductosEditarMarca";
             this.cmbProductosEditarMarca.Size = new System.Drawing.Size(200, 23);
             this.cmbProductosEditarMarca.TabIndex = 5;
@@ -148,7 +148,7 @@ namespace MantenedorProductos.WIN.Mantenedores
             // 
             // txtProductosEditarCodBarra
             // 
-            this.txtProductosEditarCodBarra.Location = new System.Drawing.Point(93, 54);
+            this.txtProductosEditarCodBarra.Location = new System.Drawing.Point(98, 54);
             this.txtProductosEditarCodBarra.Name = "txtProductosEditarCodBarra";
             this.txtProductosEditarCodBarra.Size = new System.Drawing.Size(200, 23);
             this.txtProductosEditarCodBarra.TabIndex = 3;
@@ -164,9 +164,9 @@ namespace MantenedorProductos.WIN.Mantenedores
             // 
             // txtProductosEditarNombre
             // 
-            this.txtProductosEditarNombre.Location = new System.Drawing.Point(93, 25);
+            this.txtProductosEditarNombre.Location = new System.Drawing.Point(98, 25);
             this.txtProductosEditarNombre.Name = "txtProductosEditarNombre";
-            this.txtProductosEditarNombre.Size = new System.Drawing.Size(200, 23);
+            this.txtProductosEditarNombre.Size = new System.Drawing.Size(300, 23);
             this.txtProductosEditarNombre.TabIndex = 1;
             // 
             // lblProductosEditarNombre
@@ -182,13 +182,13 @@ namespace MantenedorProductos.WIN.Mantenedores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(334, 261);
+            this.ClientSize = new System.Drawing.Size(434, 261);
             this.Controls.Add(this.pnlProductosEditar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "Frm_Productos_Editar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Editar Producto";            
+            this.Text = "Editar Producto";
             this.pnlProductosEditar.ResumeLayout(false);
             this.pnlProductosEditar.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nupProductosEditarPrecio)).EndInit();

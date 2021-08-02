@@ -1,5 +1,4 @@
-﻿using RestSharp;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -9,13 +8,11 @@ using System.Windows.Forms;
 
 namespace MantenedorProductos.WIN.Mantenedores
 {
-    public partial class Frm_SubCategorias : Form
+    public partial class Frm_Marcas_Editar : Form
     {
-        private readonly RestClient _client = new RestClient("http://localhost:55295");
-        public Frm_SubCategorias()
+        public Frm_Marcas_Editar()
         {
             InitializeComponent();
-            dgvSubCategorias.AutoGenerateColumns = false;
         }
     }
 }
