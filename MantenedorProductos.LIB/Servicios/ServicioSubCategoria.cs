@@ -51,7 +51,7 @@ namespace MantenedorProductos.LIB.Servicios
             }
             else
             {
-                _DataBase.Categorias.Where(c => c.Nombre.ToLower().Equals(subCategoria.Nombre.ToLower()))
+                _DataBase.SubCategorias.Where(c => c.Nombre.ToLower().Equals(subCategoria.Nombre.ToLower()))
                     .Select(c =>
                     {
                         if (!c.Id.Equals(idSubCategoria))
@@ -61,7 +61,7 @@ namespace MantenedorProductos.LIB.Servicios
                         return c;
                     });
 
-                _DataBase.Categorias.Where(c => c.Id.Equals(idSubCategoria))
+                _DataBase.SubCategorias.Where(c => c.Id.Equals(idSubCategoria))
                     .Select(c =>
                     {
                         c.Nombre = subCategoria.Nombre;
@@ -73,13 +73,13 @@ namespace MantenedorProductos.LIB.Servicios
         }
         public bool Eliminar(Guid idSubCategoria)
         {
-            if (!_DataBase.SubCategorias.Any(p => p.Id.Equals(idSubCategoria)))
+            if (!_DataBase.SubCategorias.Any(c => c.Id.Equals(idSubCategoria)))
             {
                 throw new Exception("No se encontró Sub Categoría.");
             }
             else
             {
-                if (_DataBase.Categorias.Any(p => p.IdSubCategoria.Equals(idSubCategoria)))
+                if (_DataBase.Categorias.Any(c => c.IdSubCategoria.Equals(idSubCategoria)))
                 {
                     throw new Exception("No es posible eliminar la Sub Categoría ya que esta siendo utilizada en una Categoría.");
                 }

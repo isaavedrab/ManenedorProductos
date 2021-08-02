@@ -32,14 +32,14 @@ namespace MantenedorProductos.WIN.Mantenedores
                 Nombre = string.Empty;                
                 Buscar();
 
-                MessageBox.Show("La Categoría se ha agregado correctamente.",
+                MessageBox.Show("La Marca se ha agregado correctamente.",
                                           "Mantenedor de Categorías",
                                           MessageBoxButtons.OK);
             }
             else
             {
                 MessageBox.Show(response.Content,
-                                          "Mantenedor de Categorías",
+                                          "Mantenedor de Marcas",
                                           MessageBoxButtons.OK);
             }
         }
